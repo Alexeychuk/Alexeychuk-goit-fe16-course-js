@@ -1,28 +1,35 @@
 'use strict'
 
 let country = prompt("Введите страну").toLowerCase();
-let price;
+const priceChina = 100;
+const priceSA = 250;
+const priceAustralia = 170;
+const priceIndia = 80;
+const priceYamaica = 120;
+
 
 switch(country){
 
-    case "китай": price = 100;       
+    case "китай": 
+    alert(`Доставка в ${country} будет стоить ${priceChina} кредитов`);      
         break; 
 
-    case "южная америка": price = 250;
+    case "южная америка": 
+    alert(`Доставка в ${country} будет стоить ${priceSA} кредитов`);
        
         break; 
-    case "австралия": price = 170;       
+    case "австралия":  
+    alert(`Доставка в ${country} будет стоить ${priceAustralia} кредитов`);     
         break; 
 
-    case "индия": price = 80;      
+    case "индия": 
+    alert(`Доставка в ${country} будет стоить ${priceIndia} кредитов`);    
         break; 
 
-    case "ямайка": price = 120;
+    case "ямайка": 
+    alert(`Доставка в ${country} будет стоить ${priceYamaica} кредитов`);
         break;  
 
     default: alert("В вашей стране доставка не доступна");
 }
 
-if (price !== undefined){
-    alert(`Доставка в ${country} будет стоить ${price} кредитов`);
-}
