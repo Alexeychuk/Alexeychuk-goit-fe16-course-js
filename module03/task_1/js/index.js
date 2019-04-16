@@ -15,7 +15,8 @@ function addLogin(allLogins, login){
   if(isLoginValid(login)){
     if(isLoginUnique(allLogins, login)){ 
       console.log('Логин успешно добавлен!');
-      return logins.push(login);
+      logins.push(login)
+      return logins;
     }
     else{
       console.log('Такой логин уже используется!');
