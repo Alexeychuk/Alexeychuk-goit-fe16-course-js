@@ -23,24 +23,18 @@ const notepad = {
     this.notes.push(note);
     return note;
   },
+
   deleteNote(id) {
-    for (let i = 0; i < this.notes.length; i++) {
-      if (this.notes[i].id === id) {
-        this.notes = this.notes.slice(0, i).concat(this.notes.slice(i+1));
-      }
-    }
-    return;
+    if (this.findNoteById(id)) return this.notes = this.notes.slice(0, this.notes.indexOf(this.findNoteById(id))).concat(this.notes.slice(this.notes.indexOf(this.findNoteById(id))+1));
   },
 
-  updateNoteContent(id, updatedContent) {
-    for (let note of this.notes) {
-      if (note.id === id) {
-        Object.assign(note, updatedContent);
-        return note;
-      }
-    }
-    return;
+  updateNoteContent(id, updatedContent) { 
+    if (this.findNoteById(id)){  
+    return  this.notes[this.notes.indexOf(this.findNoteById(id))] = {...this.findNoteById(id), ...updatedContent}
+      
+    }     
   },
+
   updateNotePriority(id, priority) {
     for (let note of this.notes) {
       if (note.id === id) {
