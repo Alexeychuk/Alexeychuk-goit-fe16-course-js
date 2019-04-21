@@ -20,7 +20,7 @@ const Notepad = function Notepad(notes = []) {
   };
 
   this.deleteNote = function (id) {
-    if (this.findNoteById(id)) return this.notes = this.notes.slice(0, this.notes.indexOf(this.findNoteById(id))).concat(this.notes.slice(this.notes.indexOf(this.findNoteById(id))+1));
+    this.notes.splice(this.notes.indexOf(this.findNoteById(id)), 1);
   };
 
   this.updateNoteContent = function(id, updatedContent) { 

@@ -25,8 +25,10 @@ const notepad = {
   },
 
   deleteNote(id) {
-    if (this.findNoteById(id)) return this.notes = this.notes.slice(0, this.notes.indexOf(this.findNoteById(id))).concat(this.notes.slice(this.notes.indexOf(this.findNoteById(id))+1));
-  },
+    if (this.findNoteById(id)) {
+      this.notes.splice(this.notes.indexOf(this.findNoteById(id)), 1);
+    }
+ return this.notes },
 
   updateNoteContent(id, updatedContent) { 
     if (this.findNoteById(id)){  
