@@ -97,7 +97,7 @@ const getUsersByEyeColor = (users, color) => users.filter(user => user.eyeColor 
 
 console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
-const getUsersByGender = (users, gender) =>  users.filter(user => user.gender === gender);
+const getUsersByGender = (users, gender) => users.filter(user => user.gender === gender).map(user => user.name);
 
 console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
@@ -124,19 +124,10 @@ return totalBalance;
 
 console.log(getTotalBalance(users)); // 20916
 
-const getUsersByFriend = (users, name) => users.reduce((result, user) =>{
-  
-  if (user.friends.includes(name)) {
-   result.push(user.name);
-   return result;
-  }
-
-  return result;
-},[]);
+const getUsersByFriend = (users, name) => users.filter((user => user.friends.includes(name))).map(user => user.name);
 
 console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
-
 
 //////.................Дополнительные задания 
 const getUniqueSkills = users => users.reduce((skillsArr,user) => {
