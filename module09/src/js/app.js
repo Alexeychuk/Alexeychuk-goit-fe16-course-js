@@ -12,10 +12,7 @@ class Notepad {
   }
 
   findNoteById(id) {
-    for (let note of this._notes) {
-      if (note.id === id) return note;
-    }
-    return;
+    return this._notes.find(note => note.id === id);
   }
 
   saveNote(note) {
