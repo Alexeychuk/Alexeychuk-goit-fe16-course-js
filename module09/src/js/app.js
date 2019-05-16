@@ -134,7 +134,7 @@ const createNoteContent = note => {
   body.classList.add("note__body");
   body.textContent = note.body;
 
-  content.append(...[title, body])
+  content.append(title, body)
 
   return content;
 }
