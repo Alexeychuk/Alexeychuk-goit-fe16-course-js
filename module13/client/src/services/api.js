@@ -1,6 +1,6 @@
+
+
 const URL = 'http://localhost:3000/notes';
-
-
 
 export const getNotes = () => {
    return fetch(URL).then(response => {

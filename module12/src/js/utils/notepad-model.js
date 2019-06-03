@@ -11,7 +11,7 @@ export default class Notepad {
   
     findNoteById(id) {
       return new Promise ((resolve) => {
-      setTimeout(()=> {
+      setTimeout(()=> {  
         resolve( this._notes.find(note => note.id === id));
       },300);
     }) 

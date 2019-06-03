@@ -5,6 +5,10 @@ import Notepad from './utils/notepad-model';
 import {getRefs, renderNoteList, createListItem} from './utils/view.js';
 import noteTemplate from '../templates/note.hbs';
 
+
+const URL = 'http://localhost:3000/notes';
+
+
 MicroModal.init();
 
 const notyf = new Notyf();
